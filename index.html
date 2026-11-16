@@ -2,8 +2,8 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>wither｜世界史地図・資料集</title><meta name="description" content="世界史を年代別の3D地図で学べるwither。国や王朝の領域、都・主要都市、建国者、存続年代、滅亡の経緯を確認できます。117件の学習図鑑を収録。">
 <style>
 :root{color-scheme:dark;--bg:#08121c;--panel:#101f2c;--edge:#29404e;--muted:#9cafba;--text:#e9f0ee;--accent:#e4c18a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.6 system-ui,'Yu Gothic',sans-serif}button,input,select{font:inherit}button,select,input[type=number],input[type=search]{border:1px solid var(--edge);background:#152b39;color:var(--text);border-radius:7px;padding:7px 11px}button{cursor:pointer}button:hover,button.active{border-color:var(--accent);color:var(--accent);background:#263843}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--edge)}.brand{font:24px Georgia,serif;letter-spacing:5px}.brand small{font:11px system-ui;letter-spacing:2px;display:block;color:var(--muted)}.tag{font-size:12px;color:var(--muted)}main{display:grid;grid-template-columns:minmax(0,1fr) 340px;height:calc(100dvh - 76px);min-height:650px}.map-panel{position:relative;min-width:0;display:flex;flex-direction:column}.stage{position:relative;flex:1;min-height:340px;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,#18303e 0%,#0a1721 56%,#071019 85%)}canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}.map-top{position:absolute;top:20px;left:24px;pointer-events:none}.eyebrow{color:var(--accent);font-size:10px;letter-spacing:3px;text-transform:uppercase}.map-top h1{font-size:32px;font-weight:400;margin:4px 0}.map-top p{font-size:12px;color:var(--muted);margin:0;max-width:380px}.view-controls{position:absolute;top:20px;right:18px;display:flex;gap:6px}.regions{position:absolute;bottom:17px;left:20px;display:flex;gap:5px;flex-wrap:wrap;max-width:80%}.regions button{font-size:11px;padding:5px 9px;background:#0e202cdb}.zoom{position:absolute;right:18px;bottom:18px;display:flex;flex-direction:column;gap:5px}.zoom button{width:38px}.tip{position:absolute;pointer-events:none;background:#07131ef2;border:1px solid var(--edge);border-radius:7px;padding:8px 12px;max-width:250px;display:none;font-size:12px;z-index:5}.timeline{padding:18px 25px 20px;border-top:1px solid var(--edge);background:#0c1a25}.timehead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.timehead label{font-size:12px;color:var(--muted)}#yearInput{width:95px;padding:4px 7px}.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.timehead button{padding:5px 10px}input[type=range]{width:100%;accent-color:var(--accent);cursor:ew-resize;margin:16px 0 3px}.ticks{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.presets button{font-size:11px;padding:4px 8px}.status{color:var(--muted);font-size:11px;margin-top:10px}.status strong{color:var(--accent);font-weight:400}aside{background:var(--panel);border-left:1px solid var(--edge);overflow:auto;padding:23px 21px}h2{font-size:16px;font-weight:500;margin:3px 0 14px}h3{font-size:13px;font-weight:500;margin:19px 0 8px}.small{font-size:12px;color:var(--muted)}.divider{border-top:1px solid var(--edge);margin:20px 0}.toggles{display:flex;gap:13px;font-size:12px;flex-wrap:wrap}.toggles input{accent-color:var(--accent)}#search{width:100%;margin:9px 0 8px}#countryList{max-height:220px;overflow:auto}#countryList button{display:flex;align-items:center;gap:9px;width:100%;text-align:left;border:0;border-radius:4px;background:transparent;padding:6px 7px;font-size:12px}#countryList button:hover{background:#203543}.swatch{width:9px;height:9px;flex-shrink:0;border-radius:2px}.detail{padding:13px;background:#182e3c;border:1px solid var(--edge);border-radius:9px;min-height:100px}.detail h3{margin:0 0 4px;font-size:17px}.detail p{font-size:12px;margin:7px 0}.detail .source-name{color:var(--muted);font-size:11px;overflow-wrap:anywhere}.event{border-left:2px solid #796e58;padding:2px 0 2px 12px;margin:10px 0;font-size:12px}.event b{color:var(--accent);display:block;font-size:11px}summary{cursor:pointer;font-size:12px;color:var(--accent)}details p{font-size:11px;color:var(--muted)}a{color:#afcbd4}.notice{font-size:11px;border-left:2px solid var(--accent);padding-left:10px;color:#c5c2b6}.loader{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#0d1c29e8;border:1px solid var(--edge);padding:13px 20px;border-radius:8px;pointer-events:none}.hidden{display:none}.footnote{font-size:10px;color:var(--muted)}@media(max-width:900px){main{grid-template-columns:minmax(0,1fr) 285px}aside{padding:20px 14px}.tag{display:none}.map-top{top:15px;left:18px}.map-top h1{font-size:27px}.view-controls{top:95px;right:12px}.map-top p{max-width:290px}}@media(max-width:640px){header{height:63px;padding:0 18px}.brand{font-size:20px}main{height:auto;min-height:0;display:block}.stage{height:61dvh;min-height:380px}.timeline{padding:14px 16px}aside{border-left:0;border-top:1px solid var(--edge)}.regions{max-width:85%;bottom:15px;left:12px;right:48px}.regions button{font-size:10px}.map-top h1{font-size:26px}.map-top p{max-width:260px;font-size:11px}.view-controls{top:103px}.zoom{right:10px}.timehead{gap:8px}#countryList{max-height:190px}}
- .map-key{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 14px;font-size:11px;color:#c2ced1}.map-key span{display:flex;align-items:center;gap:5px}.map-key i{display:inline-block;width:18px;height:11px;background:#8eb5ad}.key-cloud{border-radius:50%;filter:blur(2.7px);opacity:.7}.key-soft{filter:blur(1.2px)}.key-solid{border:1px solid #cbdbd7}.study-facts{margin:12px 0}.study-facts dt{font-size:11px;color:#dfc391;margin-top:9px}.study-facts dd{margin:1px 0 0;font-size:13px}.detail h4{font-size:12px;color:#e6c898;margin:14px 0 3px}.extent-note{border-top:1px solid var(--edge);padding-top:8px;margin:10px 0;color:#c1cfcf;font-size:11px}.detail details{margin-top:7px} .capital-list{display:grid;gap:5px;margin:8px 0}.capital-list button{text-align:left;font-size:12px;padding:6px 8px}.capital-list small{display:block;font-size:10px;color:#aebec6}.catalogue-tools{display:flex;gap:5px;flex-wrap:wrap}.catalogue-tools button{font-size:11px;padding:5px 8px}.catalogue-tools select{font-size:12px;max-width:100%}.city-summary{border-bottom:1px solid var(--edge);margin-bottom:12px;padding-bottom:5px}.city-guide{font-size:10px!important}header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px}header .tag{display:block;margin:0;text-align:center;line-height:1.5} @media(max-width:900px){header .tag{display:block;font-size:11px}} @media(max-width:640px){header{height:90px;padding:10px 18px;grid-template-columns:1fr auto;gap:3px 12px}.brand{grid-column:1;grid-row:1}header #help{grid-column:2;grid-row:1}header .tag{grid-column:1/-1;grid-row:2;text-align:left;font-size:11px;line-height:1.3}}</style></head><body>
-<header><div class="brand">wither<small>世界史地図・資料集</small></div><p class="tag">年代を動かして、国の領域・都・歴史を学ぶ。</p><button id="help">使い方・出典</button></header>
+ .map-key{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 14px;font-size:11px;color:#c2ced1}.map-key span{display:flex;align-items:center;gap:5px}.map-key i{display:inline-block;width:18px;height:11px;background:#8eb5ad}.key-cloud{border-radius:50%;filter:blur(2.7px);opacity:.7}.key-soft{filter:blur(1.2px)}.key-solid{border:1px solid #cbdbd7}.study-facts{margin:12px 0}.study-facts dt{font-size:11px;color:#dfc391;margin-top:9px}.study-facts dd{margin:1px 0 0;font-size:13px}.detail h4{font-size:12px;color:#e6c898;margin:14px 0 3px}.extent-note{border-top:1px solid var(--edge);padding-top:8px;margin:10px 0;color:#c1cfcf;font-size:11px}.detail details{margin-top:7px} .capital-list{display:grid;gap:5px;margin:8px 0}.capital-list button{text-align:left;font-size:12px;padding:6px 8px}.capital-list small{display:block;font-size:10px;color:#aebec6}.catalogue-tools{display:flex;gap:5px;flex-wrap:wrap}.catalogue-tools button{font-size:11px;padding:5px 8px}.catalogue-tools select{font-size:12px;max-width:100%}.city-summary{border-bottom:1px solid var(--edge);margin-bottom:12px;padding-bottom:5px}.city-guide{font-size:10px!important}header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px}header .tag{display:block;margin:0;text-align:center;line-height:1.5} @media(max-width:900px){header .tag{display:block;font-size:11px}} @media(max-width:640px){header{height:90px;padding:10px 18px;grid-template-columns:1fr auto;gap:3px 12px}.brand{grid-column:1;grid-row:1}header #help{grid-column:2;grid-row:1}header .tag{grid-column:1/-1;grid-row:2;text-align:left;font-size:11px;line-height:1.3}}.atlas-brand-row{display:flex;align-items:center;gap:12px;min-width:0}.atlas-nav{position:relative;z-index:12}.atlas-nav summary{display:grid;place-items:center;width:44px;height:44px;list-style:none;cursor:pointer;border:1px solid var(--edge);border-radius:7px;color:var(--text)}.atlas-nav summary::-webkit-details-marker{display:none}.atlas-nav summary:hover,.atlas-nav[open] summary{color:var(--accent);border-color:currentColor}.atlas-bars{display:block;width:17px;height:12px;border-block:1.5px solid;position:relative}.atlas-bars:after{content:"";position:absolute;inset:50% 0 auto;border-top:1.5px solid;transform:translateY(-50%)}.atlas-nav nav{position:absolute;top:calc(100% + 7px);left:0;width:min(304px,calc(100vw - 36px));padding:8px;border:1px solid var(--edge);border-radius:9px;background:var(--panel);box-shadow:0 10px 26px #0006}.atlas-china{display:flex;align-items:center;gap:12px;padding:15px 13px;color:#233f34;background:#f7f5ee;border-radius:4px;text-decoration:none}.atlas-china:hover{background:#eeeadd}.atlas-seal{border:2px solid #a34532;color:#a34532;font:600 18px/1.15 "Yu Mincho",serif;writing-mode:vertical-rl;padding:4px 1px}.atlas-china strong{font:600 19px/1.5 "Yu Mincho",serif}.atlas-china small{display:block;color:#48594c;font-size:11px}.atlas-arrow{margin-left:auto}.atlas-nav :focus-visible{outline:2px solid var(--accent);outline-offset:2px}@media(max-width:640px){.atlas-brand-row{grid-area:1/1;gap:8px}}</style></head><body>
+<header><div class="atlas-brand-row"><details id="atlasNav" class="atlas-nav"><summary aria-label="地図メニュー"><span class="atlas-bars" aria-hidden="true"></span></summary><nav aria-label="関連する歴史地図"><a class="atlas-china" href="https://kaufodesu.github.io/rkshistory-china/"><span class="atlas-seal" aria-hidden="true">中国</span><span><strong>中国史地図</strong><small>王朝と出来事を、年代順にたどる。</small></span><span class="atlas-arrow" aria-hidden="true">→</span></a></nav></details><div class="brand">wither<small>世界史地図・資料集</small></div></div><p class="tag">年代を動かして、国の領域・都・歴史を学ぶ。</p><button id="help">使い方・出典</button></header>
 <main><section class="map-panel"><div class="stage" id="stage"><canvas id="map" aria-label="ドラッグで回転、二本指で拡大縮小できる歴史地球儀。国家の一覧からも地域を選べます。"></canvas><div class="map-top"><div class="eyebrow">年代でたどる世界</div><h1 id="yearTitle">1500年</h1><p id="mapCaption">地図を準備しています</p></div><div class="view-controls"><button class="active" id="globeBtn">地球儀</button><button id="flatBtn">平面図</button></div><div class="regions" id="regions"><button data-lon="20" data-lat="25" data-z="1">全体</button><button data-lon="15" data-lat="48" data-z="2">ヨーロッパ</button><button data-lon="45" data-lat="30" data-z="2.2">西アジア</button><button data-lon="110" data-lat="30" data-z="1.8">東アジア</button><button data-lon="80" data-lat="22" data-z="2.2">南アジア</button><button data-lon="20" data-lat="0" data-z="1.5">アフリカ</button><button data-lon="-85" data-lat="15" data-z="1.1">アメリカ</button></div><div class="zoom"><button id="plus" aria-label="拡大">＋</button><button id="minus" aria-label="縮小">−</button><button id="reset" aria-label="視点を戻す">↺</button></div><div class="tip" id="tip"></div><div class="loader" id="loading" role="status">地図データを展開中…</div></div>
 <div class="timeline"><div class="timehead"><div class="row"><button id="prev" aria-label="前の地図">‹</button><button id="play">▶ 再生</button><button id="next" aria-label="次の地図">›</button><select id="speed" aria-label="再生速度"><option value="1800">ゆっくり</option><option value="900" selected>標準</option><option value="450">速い</option></select></div><label>指定年 <input type="number" id="yearInput" min="-500" max="2026" value="1500" aria-label="年。紀元前はマイナスで指定"> <button id="go">移動</button></label></div><input id="slider" type="range" min="-500" max="2026" step="1" value="1500" aria-label="世界史の年代"><div class="ticks"><span>前500</span><span>1</span><span>500</span><span>1000</span><span>1500</span><span>2026</span></div><div class="presets" id="presets"></div><div class="status" id="status" role="status"></div></div></section>
 <aside><div class="eyebrow">地図を調べる</div><h2>その時代の世界を探す</h2><div class="toggles"><label><input type="checkbox" id="labels" checked>国名</label><label><input type="checkbox" id="grid">経緯線</label><label><input type="checkbox" id="capitals" checked>都・政治拠点</label><label><input type="checkbox" id="cities" checked>主要都市</label><label><input type="checkbox" id="originalNames">原語名</label><label><input type="checkbox" id="compare">前の地図の境界</label></div><p class="small">ドラッグで回転／二本指を広げて拡大・縮めて縮小。国名を選ぶと、その地域へ移動します。</p><p class="small city-guide">★ 都・政治拠点　● 主要都市。都市は指定年に連動し、領域の地図基準年とは異なる場合があります。</p><div class="map-key"><span><i class="key-cloud"></i>遊牧民族の活動圏</span><span><i class="key-solid"></i>国・地域の範囲</span></div><div class="detail" id="detail"><h3>世界のつながりをたどる</h3><p>色の付いた領域か、下の国名を選んでください。</p><p class="small">同じ支配勢力は同じ色。文化圏・集団も含み、独立国だけの一覧ではありません。</p></div><h3>国・王朝を探す <span class="small" id="count"></span></h3><div class="catalogue-tools"><input id="countryScope" type="hidden" value="map"><button id="mapScopeBtn" class="active">表示中の地図</button><button id="bookScopeBtn">全117件の学習図鑑</button><select id="historyRegion" aria-label="図鑑の地域" hidden><option value="">全地域</option><option>東アジア</option><option>内陸アジア</option><option>西アジア</option><option>ヨーロッパ</option><option>南・東南アジア</option><option>アフリカ</option><option>アメリカ</option></select></div><input id="search" type="search" placeholder="国名・都を検索：明、南京…" aria-label="表示中の国家・文化圏を検索"><div id="countryList"></div><div class="divider"></div><h3>この地図の前後に起きたこと</h3><div id="events"></div><div class="divider"></div><p class="notice" id="accuracy">国境線は復元・概略です。年単位の正確な領土推移ではありません。</p><details id="sources"><summary>出典・精度・よくある質問</summary><p><b>質問：GeaCronの地図そのもの？</b><br>いいえ。GeaCronの操作を参考にした地球儀です。地図データは別の公開資料を使用しています。</p><p><b>質問：1年ずつ国境が変わる？</b><br>44の登録年代のうち、指定年以前で最も新しい地図を表示します。間の年代は補間しません。指定年と地図基準年は別々に表示します。紀元0年はありません。</p><p><b>質問：現代まで正確？</b><br>この資料の最新地図は2010年です。それ以降は2010年の参考図を表示し、現在の国境とはみなしません。係争地や実効支配も現状を表すものではありません。</p><p><b>質問：どれくらい信用できる？</b><br>世界・大陸規模の概観向け資料です。古代の文化圏と国家の区別、境界の復元、時代に合わない地名などに問題が残ります。特に近現代の一部に後世の国名が混じるため、入試の年号・国名確認には教科書・資料集も照合してください。空白は「人がいなかった」という意味ではありません。</p><p><b>地理データ</b><br>アンドレ・オウレドニクと協力者による <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener">歴史地図の基礎データ</a>。取得日：2026-11-14。座標を小数4桁に丸め、描画時にリング方向を整えています。地図ごとの「境界精度」属性は原資料の分類で、検証済みの正確さを保証しません。</p><p><b>利用許諾</b><br>原データはGPL-3.0。派生ファイル内の地理データと本アプリの独自コードもGPL-3.0で提供します。<a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">ライセンス全文</a>。描画ライブラリ：D3.js 第7.9.0版。著作権者：マイク・ボストック。ISCライセンス。依存コード・地図データはこのHTML内に含まれます。</p><p>学習カードの参考資料：<a href="https://www.tama.ac.jp/guide/inter_seminar/2024/2024_asia_presentation.pdf" target="_blank" rel="noopener">多摩大学・モンゴル帝国の遺産（歴史年表）</a>、<a href="https://www.metmuseum.org/essays/the-art-of-the-mamluk-period-1250-1517" target="_blank" rel="noopener">メトロポリタン美術館・マムルーク朝</a>。古代や遊牧社会の年代には諸説があります。</p><p>滅亡・制度移行の参考資料：<a href="https://en.chnmuseum.cn/collections_577/collection_highlights_608/objects_of_chinese_revolutionary_history_610/202008/t20200806_246813.html" target="_blank" rel="noopener">中国国家博物館・清帝退位詔書</a>、<a href="https://cdn.tbmm.gov.tr/TbmmWeb/Yayinlar/Dosya/b6aa0899-396d-4442-9b1f-17be2445d948.pdf" target="_blank" rel="noopener">トルコ大国民議会・スルタン制廃止</a>。国名は提供された世界史国家一覧を参照しました。</p><p><b>都市と学習図鑑</b><br>都・政治拠点の位置と年代は概略です。複都・臨時の王廷・遷都の全例を網羅していません。都市の印は都市域のおおよその位置です。国境データにない国も全117件の図鑑で読めます。紀元前500年以前の国の都は「参照」地点として表示し、背景の領域年代を明記します。</p><p>都市・王朝の参考資料：<a href="https://www.metmuseum.org/ja/toah/ht/06/eak" target="_blank" rel="noopener">メトロポリタン美術館・朝鮮史</a>、<a href="https://whc.unesco.org/en/list/1081/" target="_blank" rel="noopener">UNESCO・オルホン渓谷</a>、<a href="https://whc.unesco.org/en/list/412/" target="_blank" rel="noopener">UNESCO・メキシコシティ</a>、<a href="https://guides.loc.gov/brazil-us-relations/populist-republic" target="_blank" rel="noopener">米国議会図書館・ブラジル史</a>。</p><p id="dataCredits">主要な歴史用語は一般的な日本語表記に調整しています。細かな民族名・地域名には自動翻訳による仮表記が含まれます。読みや表記を確認できない名称は、その旨を表示しています。「原語名」で元の表記に切り替えられます。</p><p>再生は登録地図を順に送ります。地図の間隔は不均等なので、再生時間は歴史上の経過時間に比例しません。「前の地図の境界」は点線の参考重ね合わせで、領土差分の自動判定ではありません。</p></details><p class="footnote">wither · 44年代の歴史地図 · オフライン版</p></aside></main>
@@ -1111,3 +1111,354 @@ Corresponding Source conveyed under this section must be accompanied
 by the Installation Information.  But this requirement does not apply
 if neither you nor any third party retains the ability to install
 modified object code on the User Product (for example, the work has
+been installed in ROM).
+
+  The requirement to provide Installation Information does not include a
+requirement to continue to provide support service, warranty, or updates
+for a work that has been modified or installed by the recipient, or for
+the User Product in which it has been modified or installed.  Access to a
+network may be denied when the modification itself materially and
+adversely affects the operation of the network or violates the rules and
+protocols for communication across the network.
+
+  Corresponding Source conveyed, and Installation Information provided,
+in accord with this section must be in a format that is publicly
+documented (and with an implementation available to the public in
+source code form), and must require no special password or key for
+unpacking, reading or copying.
+
+  7. Additional Terms.
+
+  "Additional permissions" are terms that supplement the terms of this
+License by making exceptions from one or more of its conditions.
+Additional permissions that are applicable to the entire Program shall
+be treated as though they were included in this License, to the extent
+that they are valid under applicable law.  If additional permissions
+apply only to part of the Program, that part may be used separately
+under those permissions, but the entire Program remains governed by
+this License without regard to the additional permissions.
+
+  When you convey a copy of a covered work, you may at your option
+remove any additional permissions from that copy, or from any part of
+it.  (Additional permissions may be written to require their own
+removal in certain cases when you modify the work.)  You may place
+additional permissions on material, added by you to a covered work,
+for which you have or can give appropriate copyright permission.
+
+  Notwithstanding any other provision of this License, for material you
+add to a covered work, you may (if authorized by the copyright holders of
+that material) supplement the terms of this License with terms:
+
+    a) Disclaiming warranty or limiting liability differently from the
+    terms of sections 15 and 16 of this License; or
+
+    b) Requiring preservation of specified reasonable legal notices or
+    author attributions in that material or in the Appropriate Legal
+    Notices displayed by works containing it; or
+
+    c) Prohibiting misrepresentation of the origin of that material, or
+    requiring that modified versions of such material be marked in
+    reasonable ways as different from the original version; or
+
+    d) Limiting the use for publicity purposes of names of licensors or
+    authors of the material; or
+
+    e) Declining to grant rights under trademark law for use of some
+    trade names, trademarks, or service marks; or
+
+    f) Requiring indemnification of licensors and authors of that
+    material by anyone who conveys the material (or modified versions of
+    it) with contractual assumptions of liability to the recipient, for
+    any liability that these contractual assumptions directly impose on
+    those licensors and authors.
+
+  All other non-permissive additional terms are considered "further
+restrictions" within the meaning of section 10.  If the Program as you
+received it, or any part of it, contains a notice stating that it is
+governed by this License along with a term that is a further
+restriction, you may remove that term.  If a license document contains
+a further restriction but permits relicensing or conveying under this
+License, you may add to a covered work material governed by the terms
+of that license document, provided that the further restriction does
+not survive such relicensing or conveying.
+
+  If you add terms to a covered work in accord with this section, you
+must place, in the relevant source files, a statement of the
+additional terms that apply to those files, or a notice indicating
+where to find the applicable terms.
+
+  Additional terms, permissive or non-permissive, may be stated in the
+form of a separately written license, or stated as exceptions;
+the above requirements apply either way.
+
+  8. Termination.
+
+  You may not propagate or modify a covered work except as expressly
+provided under this License.  Any attempt otherwise to propagate or
+modify it is void, and will automatically terminate your rights under
+this License (including any patent licenses granted under the third
+paragraph of section 11).
+
+  However, if you cease all violation of this License, then your
+license from a particular copyright holder is reinstated (a)
+provisionally, unless and until the copyright holder explicitly and
+finally terminates your license, and (b) permanently, if the copyright
+holder fails to notify you of the violation by some reasonable means
+prior to 60 days after the cessation.
+
+  Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+  Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, you do not qualify to receive new licenses for the same
+material under section 10.
+
+  9. Acceptance Not Required for Having Copies.
+
+  You are not required to accept this License in order to receive or
+run a copy of the Program.  Ancillary propagation of a covered work
+occurring solely as a consequence of using peer-to-peer transmission
+to receive a copy likewise does not require acceptance.  However,
+nothing other than this License grants you permission to propagate or
+modify any covered work.  These actions infringe copyright if you do
+not accept this License.  Therefore, by modifying or propagating a
+covered work, you indicate your acceptance of this License to do so.
+
+  10. Automatic Licensing of Downstream Recipients.
+
+  Each time you convey a covered work, the recipient automatically
+receives a license from the original licensors, to run, modify and
+propagate that work, subject to this License.  You are not responsible
+for enforcing compliance by third parties with this License.
+
+  An "entity transaction" is a transaction transferring control of an
+organization, or substantially all assets of one, or subdividing an
+organization, or merging organizations.  If propagation of a covered
+work results from an entity transaction, each party to that
+transaction who receives a copy of the work also receives whatever
+licenses to the work the party's predecessor in interest had or could
+give under the previous paragraph, plus a right to possession of the
+Corresponding Source of the work from the predecessor in interest, if
+the predecessor has it or can get it with reasonable efforts.
+
+  You may not impose any further restrictions on the exercise of the
+rights granted or affirmed under this License.  For example, you may
+not impose a license fee, royalty, or other charge for exercise of
+rights granted under this License, and you may not initiate litigation
+(including a cross-claim or counterclaim in a lawsuit) alleging that
+any patent claim is infringed by making, using, selling, offering for
+sale, or importing the Program or any portion of it.
+
+  11. Patents.
+
+  A "contributor" is a copyright holder who authorizes use under this
+License of the Program or a work on which the Program is based.  The
+work thus licensed is called the contributor's "contributor version".
+
+  A contributor's "essential patent claims" are all patent claims
+owned or controlled by the contributor, whether already acquired or
+hereafter acquired, that would be infringed by some manner, permitted
+by this License, of making, using, or selling its contributor version,
+but do not include claims that would be infringed only as a
+consequence of further modification of the contributor version.  For
+purposes of this definition, "control" includes the right to grant
+patent sublicenses in a manner consistent with the requirements of
+this License.
+
+  Each contributor grants you a non-exclusive, worldwide, royalty-free
+patent license under the contributor's essential patent claims, to
+make, use, sell, offer for sale, import and otherwise run, modify and
+propagate the contents of its contributor version.
+
+  In the following three paragraphs, a "patent license" is any express
+agreement or commitment, however denominated, not to enforce a patent
+(such as an express permission to practice a patent or covenant not to
+sue for patent infringement).  To "grant" such a patent license to a
+party means to make such an agreement or commitment not to enforce a
+patent against the party.
+
+  If you convey a covered work, knowingly relying on a patent license,
+and the Corresponding Source of the work is not available for anyone
+to copy, free of charge and under the terms of this License, through a
+publicly available network server or other readily accessible means,
+then you must either (1) cause the Corresponding Source to be so
+available, or (2) arrange to deprive yourself of the benefit of the
+patent license for this particular work, or (3) arrange, in a manner
+consistent with the requirements of this License, to extend the patent
+license to downstream recipients.  "Knowingly relying" means you have
+actual knowledge that, but for the patent license, your conveying the
+covered work in a country, or your recipient's use of the covered work
+in a country, would infringe one or more identifiable patents in that
+country that you have reason to believe are valid.
+
+  If, pursuant to or in connection with a single transaction or
+arrangement, you convey, or propagate by procuring conveyance of, a
+covered work, and grant a patent license to some of the parties
+receiving the covered work authorizing them to use, propagate, modify
+or convey a specific copy of the covered work, then the patent license
+you grant is automatically extended to all recipients of the covered
+work and works based on it.
+
+  A patent license is "discriminatory" if it does not include within
+the scope of its coverage, prohibits the exercise of, or is
+conditioned on the non-exercise of one or more of the rights that are
+specifically granted under this License.  You may not convey a covered
+work if you are a party to an arrangement with a third party that is
+in the business of distributing software, under which you make payment
+to the third party based on the extent of your activity of conveying
+the work, and under which the third party grants, to any of the
+parties who would receive the covered work from you, a discriminatory
+patent license (a) in connection with copies of the covered work
+conveyed by you (or copies made from those copies), or (b) primarily
+for and in connection with specific products or compilations that
+contain the covered work, unless you entered into that arrangement,
+or that patent license was granted, prior to 28 March 2007.
+
+  Nothing in this License shall be construed as excluding or limiting
+any implied license or other defenses to infringement that may
+otherwise be available to you under applicable patent law.
+
+  12. No Surrender of Others' Freedom.
+
+  If conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot convey a
+covered work so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you may
+not convey it at all.  For example, if you agree to terms that obligate you
+to collect a royalty for further conveying from those to whom you convey
+the Program, the only way you could satisfy both those terms and this
+License would be to refrain entirely from conveying the Program.
+
+  13. Use with the GNU Affero General Public License.
+
+  Notwithstanding any other provision of this License, you have
+permission to link or combine any covered work with a work licensed
+under version 3 of the GNU Affero General Public License into a single
+combined work, and to convey the resulting work.  The terms of this
+License will continue to apply to the part which is the covered work,
+but the special requirements of the GNU Affero General Public License,
+section 13, concerning interaction through a network will apply to the
+combination as such.
+
+  14. Revised Versions of this License.
+
+  The Free Software Foundation may publish revised and/or new versions of
+the GNU General Public License from time to time.  Such new versions will
+be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+  Each version is given a distinguishing version number.  If the
+Program specifies that a certain numbered version of the GNU General
+Public License "or any later version" applies to it, you have the
+option of following the terms and conditions either of that numbered
+version or of any later version published by the Free Software
+Foundation.  If the Program does not specify a version number of the
+GNU General Public License, you may choose any version ever published
+by the Free Software Foundation.
+
+  If the Program specifies that a proxy can decide which future
+versions of the GNU General Public License can be used, that proxy's
+public statement of acceptance of a version permanently authorizes you
+to choose that version for the Program.
+
+  Later license versions may give you additional or different
+permissions.  However, no additional obligations are imposed on any
+author or copyright holder as a result of your choosing to follow a
+later version.
+
+  15. Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+  16. Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+  17. Interpretation of Sections 15 and 16.
+
+  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
+
+                     END OF TERMS AND CONDITIONS
+
+            How to Apply These Terms to Your New Programs
+
+  If you develop a new program, and you want it to be of the greatest
+possible use to the public, the best way to achieve this is to make it
+free software which everyone can redistribute and change under these terms.
+
+  To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+state the exclusion of warranty; and each file should have at least
+the "copyright" line and a pointer to where the full notice is found.
+
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) <year>  <name of author>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Also add information on how to contact you by electronic and paper mail.
+
+  If the program does terminal interaction, make it output a short
+notice like this when it starts in an interactive mode:
+
+    <program>  Copyright (C) <year>  <name of author>
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+
+The hypothetical commands `show w' and `show c' should show the appropriate
+parts of the General Public License.  Of course, your program's commands
+might be different; for a GUI interface, you would use an "about box".
+
+  You should also get your employer (if you work as a programmer) or school,
+if any, to sign a "copyright disclaimer" for the program, if necessary.
+For more information on this, and how to apply and follow the GNU GPL, see
+<http://www.gnu.org/licenses/>.
+
+  The GNU General Public License does not permit incorporating your program
+into proprietary programs.  If your program is a subroutine library, you
+may consider it more useful to permit linking proprietary applications with
+the library.  If this is what you want to do, use the GNU Lesser General
+Public License instead of this License.  But first, please read
+<http://www.gnu.org/philosophy/why-not-lgpl.html>.
+
+D3 ISC License: Copyright 2010-2023 Mike Bostock. Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies. THE SOFTWARE IS PROVIDED AS IS AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. -->
+<script>(()=>{const menu=document.getElementById('atlasNav');document.addEventListener('pointerdown',event=>{if(menu.open&&!menu.contains(event.target))menu.open=false});document.addEventListener('keydown',event=>{if(menu.open&&event.key==='Escape'){menu.open=false;menu.querySelector('summary').focus()}})})();</script></body></html>
